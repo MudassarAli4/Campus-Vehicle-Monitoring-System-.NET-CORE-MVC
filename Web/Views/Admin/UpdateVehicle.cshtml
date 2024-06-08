@@ -1,0 +1,77 @@
+﻿@* @model Web.Models.Vehicle
+
+@{
+    ViewData["Title"] = "Update Vehicle";
+}
+
+<h2>Update Vehicle</h2>
+
+<form asp-action="UpdateVehicle" method="post">
+    <input type="hidden" asp-for="Vid" />
+
+    <div class="form-group">
+        <label asp-for="Vname" class="control-label">Name</label>
+        <input asp-for="Vname" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Vtype" class="control-label">Type</label>
+        <input asp-for="Vtype" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Vplate" class="control-label">Plate Number</label>
+        <input asp-for="Vplate" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Vowner" class="control-label">Owner</label>
+        <input asp-for="Vowner" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+ *@
+ @model Web.Models.Vehicle
+
+@{
+    ViewData["Title"] = "Update Vehicle";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - My ASP.NET Application</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container mt-5">
+
+        <h2>Update Vehicle</h2>
+
+        <form asp-action="UpdateVehicle" method="post">
+            <input type="hidden" asp-for="Vid" />
+
+            <div class="form-group">
+                <label asp-for="Vname" class="control-label">Name</label>
+                <input asp-for="Vname" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Vtype" class="control-label">Type</label>
+                <input asp-for="Vtype" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Vplate" class="control-label">Plate Number</label>
+                <input asp-for="Vplate" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Vowner" class="control-label">Owner</label>
+                <input asp-for="Vowner" class="form-control" />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+
+    </div>
+</body>
+</html>

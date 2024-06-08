@@ -1,0 +1,102 @@
+﻿@* @model List<Web.Models.Vehicle>
+
+@{
+    ViewData["Title"] = "Manage Vehicles";
+}
+
+<h2>Manage Vehicles</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Plate Number</th>
+            <th>Owner</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var vehicle in Model)
+        {
+            <tr>
+                <td>@vehicle.Vid</td>
+                <td>@vehicle.Vname</td>
+                <td>@vehicle.Vtype</td>
+                <td>@vehicle.Vplate</td>
+                <td>@vehicle.Vowner</td>
+                <td>
+                    <a asp-action="UpdateVehicle" asp-route-id="@vehicle.Vid">Update</a> |
+                    <a asp-action="DeleteVehicle" asp-route-id="@vehicle.Vid">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <a asp-action="AddVehicle">Add Vehicle</a> |
+    <a asp-action="Index">Back to Admin Page</a>
+    <!-- You can add other actions or links here as needed -->
+</div>
+ *@
+ @model List<Web.Models.Vehicle>
+
+@{
+    ViewData["Title"] = "Manage Vehicles";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - My ASP.NET Application</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container mt-5">
+
+        <h2>Manage Vehicles</h2>
+
+        <table class="table">
+            <thead style="background-color: #7600bc; color: white;">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Plate Number</th>
+                    <th>Owner</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var vehicle in Model)
+                {
+                    <tr>
+                        <td>@vehicle.Vid</td>
+                        <td>@vehicle.Vname</td>
+                        <td>@vehicle.Vtype</td>
+                        <td>@vehicle.Vplate</td>
+                        <td>@vehicle.Vowner</td>
+                        <td>
+                            <a asp-action="UpdateVehicle" asp-route-id="@vehicle.Vid" class="btn btn-primary">Update</a> |
+                            <a asp-action="DeleteVehicle" asp-route-id="@vehicle.Vid" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div>
+            <a asp-action="AddVehicle" class="btn btn-success">Add Vehicle</a> |
+            <a asp-action="Index" class="btn btn-secondary">Back to Admin Page</a>
+            <!-- You can add other actions or links here as needed -->
+        </div>
+
+    </div>
+
+</body>
+</html>

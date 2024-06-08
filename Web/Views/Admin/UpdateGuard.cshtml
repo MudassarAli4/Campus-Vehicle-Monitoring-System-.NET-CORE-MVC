@@ -1,0 +1,79 @@
+﻿@* @model Web.Models.User
+
+@{
+    ViewData["Title"] = "Update Guard";
+}
+
+<h2>Update Guard</h2>
+
+<form asp-action="UpdateGuard" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label asp-for="Name" class="control-label">Name</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Password" class="control-label">Password</label>
+        <input asp-for="Password" type="password" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Cnic" class="control-label">CNIC</label>
+        <input asp-for="Cnic" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Phone" class="control-label">Phone</label>
+        <input asp-for="Phone" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+ *@
+ @model Web.Models.User
+
+@{
+    ViewData["Title"] = "Update Guard";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - My ASP.NET Application</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container mt-5">
+
+        <h2>Update Guard</h2>
+
+        <form asp-action="UpdateGuard" method="post">
+            <input type="hidden" asp-for="Id" />
+
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">Name</label>
+                <input asp-for="Name" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label">Password</label>
+                <input asp-for="Password" type="password" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Cnic" class="control-label">CNIC</label>
+                <input asp-for="Cnic" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label">Phone</label>
+                <input asp-for="Phone" class="form-control" />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+
+    </div>
+
+   
+</body>
+</html>

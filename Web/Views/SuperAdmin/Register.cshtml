@@ -1,0 +1,101 @@
+﻿@* @model Web.Models.User
+
+@{
+    ViewData["Title"] = "Register Users";
+}
+
+<h2>Add Guard</h2>
+
+<form asp-action="Register" method="post">
+    <div class="form-group">
+        <label asp-for="Name" class="control-label">Name</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Password" class="control-label">Password</label>
+        <input asp-for="Password" type="password" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Cnic" class="control-label">CNIC</label>
+        <input asp-for="Cnic" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Phone" class="control-label">Phone</label>
+        <input asp-for="Phone" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Role" class="control-label">Role</label>
+        <select asp-for="Role" class="form-control">
+            <option value="SuperAdmin">SuperAdmin</option>
+            <option value="Admin">Admin</option>
+            <option value="Guard">Guard</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Register" class="btn btn-primary" />
+    </div>
+</form>
+<a asp-action="Index" class="btn btn-secondary">Back</a>
+ *@
+
+@model Web.Models.User
+
+@{
+    ViewData["Title"] = "Register Users";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - My ASP.NET Application</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        .custom-header {
+            background-color: #7600bc;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="custom-header text-center">Add User</h2>
+
+        <form asp-action="Register" method="post" class="mt-4">
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">Name</label>
+                <input asp-for="Name" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label">Password</label>
+                <input asp-for="Password" type="password" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Cnic" class="control-label">CNIC</label>
+                <input asp-for="Cnic" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label">Phone</label>
+                <input asp-for="Phone" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Role" class="control-label">Role</label>
+                <select asp-for="Role" class="form-control">
+                    <option value="SuperAdmin">SuperAdmin</option>
+                    <option value="Admin">Admin</option>
+                    <option value="Guard">Guard</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Register" class="btn btn-primary" />
+            </div>
+        </form>
+        <a asp-action="Index" class="btn btn-secondary mt-3">Back</a>
+    </div>
+
+    
+</body>
+</html>

@@ -1,0 +1,108 @@
+﻿@* @model List<Web.Models.User>
+
+@{
+    ViewData["Title"] = "Manage Guards";
+}
+
+<h2>Manage Guards</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Password</th>
+            <th>CNIC</th>
+            <th>Phone</th>
+            <th>Role</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.Name</td>
+                <td>@user.Password</td>
+                <td>@user.Cnic</td>
+                <td>@user.Phone</td>
+                <td>@user.Role</td>
+                <td>
+                    <a asp-action="UpdateGuard" asp-route-id="@user.Id">Update</a> |
+                    <a asp-action="DeleteGuard" asp-route-id="@user.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <a asp-controller="Admin" asp-action="AddGuard">Add Guard</a> |
+    <a asp-action="Index">Back to Admin Page</a>
+    <!-- You can add other actions or links here as needed -->
+</div>
+ *@
+
+@model List<Web.Models.User>
+
+@{
+    ViewData["Title"] = "Manage Guards";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - My ASP.NET Application</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container mt-5">
+
+        <h2>Manage Guards</h2>
+
+        <table class="table">
+            <thead style="background-color: #7600bc; color: white;">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Password</th>
+                    <th>CNIC</th>
+                    <th>Phone</th>
+                    <th>Role</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td>@user.Id</td>
+                        <td>@user.Name</td>
+                        <td>@user.Password</td>
+                        <td>@user.Cnic</td>
+                        <td>@user.Phone</td>
+                        <td>@user.Role</td>
+                        <td>
+                            <a asp-action="UpdateGuard" asp-route-id="@user.Id">Update</a> |
+                            <a asp-action="DeleteGuard" asp-route-id="@user.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div>
+            <a asp-controller="Admin" asp-action="AddGuard" class="btn btn-primary">Add Guard</a> |
+            <a asp-action="Index" class="btn btn-secondary">Back to Admin Page</a>
+            <!-- You can add other actions or links here as needed -->
+        </div>
+
+    </div>
+
+    
+</body>
+</html>

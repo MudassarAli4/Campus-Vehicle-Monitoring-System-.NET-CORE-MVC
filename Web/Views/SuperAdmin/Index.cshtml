@@ -1,0 +1,110 @@
+﻿@* @model List<Web.Models.User>
+
+@{
+    ViewData["Title"] = "SuperAdmin Page";
+}
+
+<h2>Welcome SuperAdmin!</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Password</th>
+            <th>CNIC</th>
+            <th>Phone</th>
+            <th>Role</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.Name</td>
+                <td>@user.Password</td>
+                <td>@user.Cnic</td>
+                <td>@user.Phone</td>
+                <td>@user.Role</td>
+                <td>
+                    <a asp-action="UpdateUser" asp-route-id="@user.Id">Update</a> |
+                    <a asp-action="DeleteUser" asp-route-id="@user.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <a asp-controller="SuperAdmin" asp-action="Register">Add User</a>
+
+    <a asp-action="Logout">Logout</a>
+</div>
+ *@
+
+@model List<Web.Models.User>
+
+@{
+    ViewData["Title"] = "SuperAdmin Page";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - My ASP.NET Application</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        .custom-table-header {
+            background-color: #7600bc;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Welcome SuperAdmin!</h2>
+
+        <table class="table table-striped table-hover mt-4">
+            <thead class="custom-table-header">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Password</th>
+                    <th>CNIC</th>
+                    <th>Phone</th>
+                    <th>Role</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td>@user.Id</td>
+                        <td>@user.Name</td>
+                        <td>@user.Password</td>
+                        <td>@user.Cnic</td>
+                        <td>@user.Phone</td>
+                        <td>@user.Role</td>
+                        <td>
+                            <a class="btn btn-warning btn-sm" asp-action="UpdateUser" asp-route-id="@user.Id">Update</a>
+                            <a class="btn btn-danger btn-sm" asp-action="DeleteUser" asp-route-id="@user.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div class="d-flex justify-content-between mt-3">
+            <a class="btn btn-success" asp-controller="SuperAdmin" asp-action="Register">Add User</a>
+            <a class="btn btn-danger" asp-action="Logout">Logout</a>
+        </div>
+    </div>
+
+  
+</body>
+</html>
